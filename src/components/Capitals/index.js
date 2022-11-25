@@ -54,9 +54,10 @@ export default class Capitals extends Component {
             <h1>Countries And Capitals</h1>
 
             <div className="input-para-container">
-              <select onChange={this.onUpdateState}>
+              <select value={resultObject.id} onChange={this.onUpdateState}>
                 {countryAndCapitalsList.map(eachObject => (
                   <option
+                 value = {eachObject.id}
                     key={eachObject.id}
                     value={eachObject.capitalDisplayText}
                   >
