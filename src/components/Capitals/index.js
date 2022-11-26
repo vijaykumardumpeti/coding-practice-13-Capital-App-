@@ -59,7 +59,7 @@ export default class Capitals extends Component {
                   <option
                  value = {eachObject.id}
                     key={eachObject.id}
-                    value={eachObject.capitalDisplayText}
+                    value={eachObject.id}
                   >
                     {eachObject.capitalDisplayText}
                   </option>
