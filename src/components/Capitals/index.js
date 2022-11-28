@@ -32,7 +32,7 @@ const countryAndCapitalsList = [
 // Write your code here
 export default class Capitals extends Component {
   state = {
-    capital: countryAndCapitalsList[0].capitalDisplayText,
+    capital: countryAndCapitalsList[0].id,
   }
 
   onUpdateState = event => {
@@ -43,9 +43,8 @@ export default class Capitals extends Component {
     const {capital} = this.state
 
     const resultObject = countryAndCapitalsList.find(
-      eachObject => eachObject.capitalDisplayText === capital,
+      eachObject => eachObject.id === capital,
     )
-    console.log(resultObject)
 
     return (
       <>
@@ -56,11 +55,7 @@ export default class Capitals extends Component {
             <div className="input-para-container">
               <select value={resultObject.id} onChange={this.onUpdateState}>
                 {countryAndCapitalsList.map(eachObject => (
-                  <option
-                 value = {eachObject.id}
-                    key={eachObject.id}
-                    value={eachObject.id}
-                  >
+                  <option key={eachObject.id} value={eachObject.id}>
                     {eachObject.capitalDisplayText}
                   </option>
                 ))}
